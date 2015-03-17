@@ -1,0 +1,3 @@
+The Pic.jpg and HealthProfiles.dat file must be outside the src folder just as I have submitted it.
+	----Note: the program will open and operate without a default HealthProfile file present----
+		----Works fine without photo as well, except there will be no photo shown......
