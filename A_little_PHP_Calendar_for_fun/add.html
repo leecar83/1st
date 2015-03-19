@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<title>Add Events</title>
+<meta name="author" content="Lee Miller" />
+<meta name="description" content="HW6" />
+<style type="text/css">
+body {
+	font-size: 16px;
+	margin-left: 10px;
+}
+dt {
+	font-size: 20px;
+	margin-bottom: 4px;
+}
+dl {
+	margin-left: 10px;
+	margin-bottom: 4px;
+}
+dd {
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+span.desc {
+	font-style: italic;
+	margin-left: 30px;
+	margin-top: 4px;
+
+}
+</style>
+</head>
+
+<body>
+<h1>New Event</h1>
+<p>This form is used to enter a new event</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * indicates field is required</p>
+<form action="add_process.php" method="post">
+	<dl>
+		<dt>Event Name*</dt>
+			<dd>
+				<input name="Name" type="text" /><br />
+				<span class="desc">The name of the event</span>
+			</dd>
+		<dt>Event Date*</dt>
+			<dd>
+				<input name="Date" type="text" /><br />
+				<span class="desc">The date of the event in the form mm/dd/yyyy</span>
+			</dd>
+		<dt>Event Location</dt>
+			<dd>
+				<input name="Location" type="text" /><br />
+				<span class="desc">The location of the event</span>
+			</dd>
+		<dt>Availability Status*</dt>
+			<dd>
+				<input name="Availability" type="radio" value="Available"/>Available<br />
+				<input name="Availability" type="radio" value="Tentative"/>Tentative<br />
+				<input name="Availability" type="radio" value="Busy"/>Busy<br />
+				<input name="Availability" type="radio" value="Unknown" checked="checked"/>Unknown<br />
+				<span class="desc">Indicates whether you will be available</span>
+			</dd>
+		<dt>Event Category*</dt>
+			<dd>
+				<select name="Category">
+					<option value="Home">Home</option>
+					<option value="Work">Work</option>
+					<option value="School">School</option>
+					<option value="Friends">Friends</option>
+					<option value="Other" selected="selected">Other</option>	
+				</select><br />
+			<span class="desc">Shows the category by color on calendar</span>
+			</dd>	
+		<dt>Event Description</dt>
+			<dd>
+				<textarea name="Description" cols="20" rows="2"></textarea><br />
+				<span class="desc">Enter a short description here</span>
+			</dd>
+			<dd>
+				<p>&nbsp;</p>
+				<input name="SubmitButton" type="submit" value="Add Event" />
+			</dd>
+	</dl>
+	
+	</form>
+	
+</body>
+</html>
