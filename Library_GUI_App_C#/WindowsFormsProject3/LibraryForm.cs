@@ -45,7 +45,7 @@ namespace WindowsFormsProject3
 			library.readTextFile ("DefaultLibrary.txt");	//read the default Library file
 			setListBox ( );	//set the List Box Contents
 			LoadClock ( );	//load the clock
-			LibraryListBox.SelectedIndex = -1;	//Set ListBox selected index to nothing
+
 		}
 
 		/// <summary>
@@ -55,8 +55,11 @@ namespace WindowsFormsProject3
 		/// <param name="e"></param>
 		private void createNewLibraryToolStripMenuItem_Click (object sender, EventArgs e)
 		{
-			if (library.HasChanges)
-				library.HasChanges = saveFileDialog (library);
+			if (library.HasChanges == true)
+			{
+				promptForSave( );
+			}
+				
 			library = new Library (defaultUser.getName ("both"), defaultUser.getEmail ( ), defaultUser.getPhone ( ));
 			setListBox ( );
 
@@ -69,9 +72,13 @@ namespace WindowsFormsProject3
 		/// <param name="e"></param>
 		private void openExistingLibraryToolStripMenuItem_Click (object sender, EventArgs e)
 		{
-			if (library.HasChanges)
-				library.HasChanges = saveFileDialog (library);
-			library.HasChanges = openFileDialog (library);
+			if (library.HasChanges == true)
+			{
+				promptForSave( );
+			}
+				
+			library = new Library( );
+			openFileDialog (library);
 			setListBox ( );
 		}
 
@@ -88,7 +95,7 @@ namespace WindowsFormsProject3
 			}
 			else
 			{
-				library.HasChanges = saveFileDialog (library);
+				saveFileDialog (library);
 			}
 		}
 
@@ -332,7 +339,7 @@ namespace WindowsFormsProject3
 		/// </summary>
 		private void promptForSave()
 		{
-			DialogResult response = MessageBox.Show("Would you like to save the changes before exiting?","??",MessageBoxButtons.YesNoCancel);
+			DialogResult response = MessageBox.Show("Would you like to save the changes?","??",MessageBoxButtons.YesNoCancel);
 			if (response == DialogResult.Yes)
 			{
 				saveFileDialog (library);

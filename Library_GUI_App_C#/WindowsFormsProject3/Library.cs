@@ -259,7 +259,6 @@ namespace WindowsFormsProject3
 				if (index < 0 || index >= Count)
 					throw new IndexOutOfRangeException (String.Format("Subscript {0} is not in the Library", index));
 				books[index] = value;
-				HasChanges = true;
 			}
 		}
 		
@@ -318,7 +317,6 @@ namespace WindowsFormsProject3
 			}
 				return strReturn;
 		}
-	
 		
 	}
 }
