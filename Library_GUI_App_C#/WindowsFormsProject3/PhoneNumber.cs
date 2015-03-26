@@ -32,7 +32,7 @@ namespace WindowsFormsProject3
 		/// <param name="number"></param>
 		public PhoneNumber(string number)
 		{
-			String msg = "Invalid input for Phone Number use format (###)###-####";
+			String msg = "Invalid input for Phone Number use format (###)###-#### or ###-###-####";
 			if (ValidatePhone (number) == true)
 			{
 				this.pNumber = number;
@@ -59,7 +59,8 @@ namespace WindowsFormsProject3
 		{
 			String fixedNumber = number.Replace (" ","");
 			Regex pattern = new Regex(@"^\([0-9]{3}\)[0-9]{3}-[0-9]{4}$");
-			if (pattern.IsMatch (fixedNumber) == true)
+			Regex pattern1 = new Regex(@"^[0-9]{3}-[0-9]{3}-[0-9]{4}$");
+			if (pattern.IsMatch (fixedNumber) == true || pattern1.IsMatch (fixedNumber) == true)
 			{
 				return true;
 			}

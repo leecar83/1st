@@ -186,6 +186,15 @@ namespace WindowsFormsProject3
 			box.ShowDialog ( );
 		}
 
+		private void userInfoToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			UserInfoBox box = new UserInfoBox( );
+			box.Names1 = defaultUser.getName("both");
+			box.Number = defaultUser.getPhone( );
+			box.Email = defaultUser.getEmail( );
+			box.Show( );
+		}
+		
 		/// <summary>
 		/// Set the List Box Contents from the Library
 		/// </summary>
@@ -418,6 +427,8 @@ namespace WindowsFormsProject3
 			TitleBox.Text = library[index].Title;
 			PriceBox.Text = String.Format (library[index].Price.ToString ( ));
 		}
+
+
 
 	}
 }

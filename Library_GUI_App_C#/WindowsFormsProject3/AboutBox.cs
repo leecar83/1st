@@ -100,5 +100,10 @@ namespace WindowsFormsProject3
 			}
 		}
 		#endregion
+
+		private void labelProductName_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
