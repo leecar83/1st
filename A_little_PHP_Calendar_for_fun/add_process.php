@@ -42,7 +42,7 @@ COLOR: black;
 	if($_SERVER['REQUEST_METHOD'] != 'POST')
 	{
 		echo "<p>&nbsp;&nbsp;Request was not POST!</p>";
-		echo "<p>&nbsp;&nbsp;&nbsp;<a href=\"hw5.html\">Return to Form</a></p>";
+		echo "<p>&nbsp;&nbsp;&nbsp;<a href=\"add.html\">Return to Form</a></p>";
 		echo "</body></html>";
 		die();
 	}
